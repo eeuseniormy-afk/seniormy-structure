@@ -783,9 +783,10 @@ void StructureEditor::promptSaveAs()
 void StructureEditor::showTermsReadOnly()
 {
     if (terms) return;
-    terms = std::make_unique<TermsOverlay> ([this]
+    SafePointer<StructureEditor> safeThis (this);
+    terms = std::make_unique<TermsOverlay> ([safeThis]
     {
-        MessageManager::callAsync ([sp = SafePointer<StructureEditor> (this)] { if (sp != nullptr && sp->terms && sp->proc.termsAccepted()) { sp->root.removeChildComponent (sp->terms.get()); sp->terms.reset(); } });
+        MessageManager::callAsync ([sp = safeThis] { if (sp != nullptr && sp->terms && sp->proc.termsAccepted()) { sp->root.removeChildComponent (sp->terms.get()); sp->terms.reset(); } });
     }, true);
     root.addAndMakeVisible (*terms);
     terms->setBounds (root.getLocalBounds());

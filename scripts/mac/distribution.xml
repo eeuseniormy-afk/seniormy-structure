@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="2">
+    <title>SeniorMy Structure</title>
+    <welcome file="welcome.html" mime-type="text/html"/>
+    <license file="license.txt" mime-type="text/plain"/>
+    <options customize="allow" require-scripts="false" hostArchitectures="x86_64,arm64"/>
+    <domains enable_localSystem="true"/>
+    <volume-check>
+        <allowed-os-versions>
+            <os-version min="10.13"/>
+        </allowed-os-versions>
+    </volume-check>
+    <choices-outline>
+        <line choice="app"/>
+        <line choice="au"/>
+        <line choice="vst3"/>
+        <line choice="library"/>
+    </choices-outline>
+    <choice id="app" title="SeniorMy Structure (app)" description="/Applications">
+        <pkg-ref id="com.seniormy.structure.app"/>
+    </choice>
+    <choice id="au" title="Audio Unit (Logic Pro, GarageBand)" description="/Library/Audio/Plug-Ins/Components">
+        <pkg-ref id="com.seniormy.structure.au"/>
+    </choice>
+    <choice id="vst3" title="VST3 (Ableton, Reaper, Cubase, Studio One, Bitwig...)" description="/Library/Audio/Plug-Ins/VST3">
+        <pkg-ref id="com.seniormy.structure.vst3"/>
+    </choice>
+    <choice id="library" title="Biblioteca orquestral / Orchestral library" description="/Library/Application Support/SeniorMy/Structure Library">
+        <pkg-ref id="com.seniormy.structure.library"/>
+    </choice>
+    <pkg-ref id="com.seniormy.structure.app" version="@VERSION@" onConclusion="none">app.pkg</pkg-ref>
+    <pkg-ref id="com.seniormy.structure.au" version="@VERSION@" onConclusion="none">au.pkg</pkg-ref>
+    <pkg-ref id="com.seniormy.structure.vst3" version="@VERSION@" onConclusion="none">vst3.pkg</pkg-ref>
+    <pkg-ref id="com.seniormy.structure.library" version="@VERSION@" onConclusion="none">library.pkg</pkg-ref>
+</installer-gui-script>

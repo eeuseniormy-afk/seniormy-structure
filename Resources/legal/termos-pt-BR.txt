@@ -1,0 +1,66 @@
+TERMOS DE USO E CONTRATO DE LICENÇA DE USUÁRIO FINAL – SENIORMY STRUCTURE
+Versão 1.0 – 25 de outubro de 2026
+
+© 2026 W. Carolino – SeniorMy – CNPJ 69.610.819/0001-77 ("Titular"). Todos os direitos reservados.
+
+Ao instalar, abrir ou utilizar o SeniorMy Structure (o "Software"), incluindo o aplicativo, os plugins Audio Unit e VST3, os presets de fábrica e a biblioteca de timbres orquestrais que o acompanha, e ao marcar "Li e aceito os Termos de Uso", você ("Usuário") declara que leu, entendeu e concorda integralmente com estes Termos. Se não concordar, não instale nem utilize o Software.
+
+1. ACEITE
+1.1. O Software pede o aceite destes Termos no instalador e na primeira vez em que é aberto em cada computador. Enquanto o aceite não for dado, o Software fica bloqueado e em silêncio (nenhum áudio é produzido).
+1.2. O aceite é registrado no computador do Usuário com a versão dos Termos, a data e a hora. Quando os Termos mudarem, o Software pedirá um novo aceite.
+1.3. O Usuário deve ter 18 anos ou mais, ou estar assistido por seu responsável legal.
+
+2. LICENÇA E TITULARIDADE
+2.1. O Titular concede ao Usuário uma licença pessoal, limitada, revogável, não exclusiva e intransferível para instalar e usar o Software e a Biblioteca (definida na cláusula 3) em computadores de sua propriedade ou sob seu controle.
+2.2. O Software e a Biblioteca são licenciados, não vendidos. Todos os direitos sobre o software, o código, os algoritmos de análise harmônica, detecção de acordes e tonalidade, o arranjador automático e a condução de vozes, o motor de áudio, a interface, as imagens, o ícone, os textos, os presets e arranjos de fábrica, o nome e a marca "SeniorMy" e "SeniorMy Structure", bem como as edições, o processamento, o mapeamento, a seleção, a organização e a compilação da Biblioteca pertencem exclusivamente a W. Carolino – CNPJ 69.610.819/0001-77, e são protegidos pela Lei nº 9.609/1998 (Lei do Software), pela Lei nº 9.610/1998 (Direitos Autorais) e pela Lei nº 9.279/1996 (Propriedade Industrial).
+
+3. PROCEDÊNCIA DOS SONS (A "BIBLIOTECA")
+3.1. Os timbres orquestrais do Software são construídos a partir de gravações da biblioteca "VS Chamber Orchestra: Community Edition" (VSCO 2 CE), da Versilian Studios (gravações de Sam Gossner e Simon Dalzell), disponibilizadas sob a licença Creative Commons CC0 1.0 (dedicação ao domínio público). Essas gravações foram selecionadas, cortadas, normalizadas, processadas, mapeadas e organizadas pelo Titular. A origem e a licença de cada gravação constam do arquivo LICENSE-SOURCES.txt da Biblioteca e da tela "Sobre" do Software.
+3.2. Estes Termos não restringem os direitos de ninguém sobre as gravações originais em domínio público; os direitos do Titular recaem sobre o Software e sobre suas edições, processamento, mapeamento, seleção, organização e compilação.
+3.3. Quando a Biblioteca não está instalada, o Software usa timbres de reserva gerados por síntese pelo próprio Titular.
+
+4. USO DO SOFTWARE, DA BIBLIOTECA E DAS LINHAS GERADAS
+4.1. O Usuário pode usar o áudio e o MIDI produzidos com o Software – inclusive as coberturas e linhas geradas automaticamente – livre de royalties, dentro de suas próprias obras musicais e audiovisuais (músicas, trilhas, vídeos, podcasts, jogos, apresentações ao vivo), inclusive com fins comerciais, sem pagar nada além do que eventualmente pagou pela licença e sem precisar dar crédito.
+4.2. É proibido extrair, redistribuir, vender, revender, sublicenciar, compartilhar ou disponibilizar os sons da Biblioteca, os presets ou os arranjos de fábrica de forma isolada ou como parte de outro produto de samples, presets ou instrumentos virtuais – no estado original ou modificados –, bem como usá-los para criar produtos concorrentes ao Software.
+4.3. A titularidade do Software e da Biblioteca permanece com o Titular; o Usuário recebe somente o direito de uso descrito acima.
+
+5. SEU ÁUDIO É SEU – E O MATERIAL QUE VOCÊ IMPORTA OU ANALISA
+5.1. As músicas, gravações, arranjos, presets do usuário e demais conteúdos criados no Software ("Conteúdo do Usuário") pertencem ao Usuário. O Titular não reivindica nenhum direito sobre eles.
+5.2. O Software analisa o áudio e o MIDI que o Usuário envia a ele e permite importar arquivos externos (WAV, AIFF, FLAC, MP3 e MIDI). Todo material analisado ou importado é de responsabilidade exclusiva do Usuário: cabe a ele ter os direitos necessários sobre cada gravação, loop ou arquivo MIDI, e ele responde por qualquer violação de direitos autorais, conexos, de voz ou de imagem.
+5.3. A análise harmônica e as linhas geradas são sugestões automáticas. Cabe ao Usuário revisar o resultado musical antes de publicá-lo.
+
+6. RESTRIÇÕES
+É proibido, sem autorização prévia e por escrito do Titular:
+a) copiar, vender, alugar, sublicenciar, distribuir ou disponibilizar o Software, a Biblioteca ou o instalador a terceiros;
+b) descompilar, desmontar, fazer engenharia reversa, extrair o código, os algoritmos ou a Biblioteca, ou modificar o Software, salvo nos limites que a lei expressamente permitir;
+c) remover ou alterar avisos de direitos autorais, créditos ou marcas;
+d) burlar o aceite destes Termos ou qualquer mecanismo de proteção;
+e) usar o Software para fins ilícitos.
+
+7. PRIVACIDADE
+O Software funciona localmente. Ele não coleta, não armazena fora do computador e não transmite dados pessoais, arquivos ou áudio do Usuário. O áudio analisado é processado só na memória, em tempo real. O registro do aceite e os presets do usuário ficam só no computador do Usuário. O Software não faz downloads automáticos.
+
+8. MARCAS E AUSÊNCIA DE AFILIAÇÃO
+8.1. As imagens, o logotipo e o ícone exibidos no Software pertencem ao Titular.
+8.2. Nomes de terceiros citados no Software ou nestes Termos – como Versilian Studios, VSCO, Audio Unit, VST e nomes de DAWs – são usados apenas para crédito ou de forma descritiva. O Titular não tem afiliação com eles, e a citação não indica vínculo, patrocínio ou aprovação. VST é marca registrada da Steinberg Media Technologies GmbH.
+
+9. COMPONENTES DE TERCEIROS
+O Software é desenvolvido com o framework JUCE e o SDK VST3, usados conforme suas respectivas licenças, cujos avisos acompanham o Software no arquivo de avisos de terceiros. Essas licenças valem somente para esses componentes.
+
+10. AUSÊNCIA DE GARANTIAS
+O Software e a Biblioteca são fornecidos "no estado em que se encontram" e podem conter erros. A detecção de acordes e de tonalidade em áudio polifônico é aproximada e pode errar, sobretudo em gravações densas, com percussão, distorção ou afinação fora do padrão. Não há garantia de funcionamento ininterrupto, de compatibilidade com determinado sistema operacional, computador, interface de áudio, DAW ou formato de arquivo, nem de adequação a uma finalidade específica. O Usuário é responsável por manter cópias de segurança de seus projetos e por ajustar níveis de volume que protejam sua audição e seu equipamento.
+
+11. LIMITAÇÃO DE RESPONSABILIDADE
+Na máxima extensão permitida pela lei, o Titular não responde por danos indiretos, incidentais, lucros cessantes, perda de receita, perda de dados, projetos ou gravações, interrupção de trabalho ou de apresentações, ou danos a equipamentos ou à audição decorrentes do uso ou da impossibilidade de uso do Software. Caso alguma responsabilidade seja reconhecida, ela fica limitada ao valor efetivamente pago pelo Usuário pela licença, se houver. Nada nestes Termos afasta direitos garantidos pela Lei nº 8.078/1990 (Código de Defesa do Consumidor), quando aplicável.
+
+12. ATUALIZAÇÕES E ENCERRAMENTO
+12.1. O Titular pode alterar, atualizar ou descontinuar o Software, a Biblioteca e estes Termos a qualquer tempo. A nova versão dos Termos será exibida no Software e precisará ser aceita para continuar o uso.
+12.2. A licença termina automaticamente em caso de descumprimento destes Termos, devendo o Usuário desinstalar e apagar todas as cópias, sem prejuízo das medidas civis e criminais cabíveis. Obras musicais já criadas licitamente com o Software antes do encerramento continuam podendo ser exploradas pelo Usuário. As obrigações sobre propriedade intelectual e responsabilidade continuam valendo após o encerramento.
+
+13. DISPOSIÇÕES GERAIS
+13.1. Se alguma cláusula for considerada inválida, as demais permanecem em vigor.
+13.2. A tolerância a qualquer descumprimento não constitui renúncia de direitos.
+13.3. Havendo versões destes Termos em outros idiomas, prevalece a versão em português.
+13.4. Estes Termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da Comarca de Taboão da Serra/SP para resolver qualquer controvérsia, ressalvado o direito do consumidor de propor ação no foro do seu domicílio.
+
+SeniorMy Structure – © 2026 W. Carolino – SeniorMy – CNPJ 69.610.819/0001-77. Todos os direitos reservados.

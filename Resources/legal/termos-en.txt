@@ -1,0 +1,66 @@
+TERMS OF USE AND END USER LICENSE AGREEMENT – SENIORMY STRUCTURE
+Version 1.0 – October 25, 2026
+
+© 2026 W. Carolino – SeniorMy – CNPJ 69.610.819/0001-77 ("Owner"). All rights reserved.
+
+By installing, opening or using SeniorMy Structure (the "Software"), including the application, the Audio Unit and VST3 plug-ins, the factory presets and the orchestral sound library that comes with it, and by ticking "I have read and accept the Terms of Use", you ("User") declare that you have read, understood and fully agree to these Terms. If you do not agree, do not install or use the Software.
+
+1. ACCEPTANCE
+1.1. The Software asks for acceptance of these Terms in the installer and the first time it is opened on each computer. Until acceptance is given, the Software stays locked and silent (no audio is produced).
+1.2. Acceptance is recorded on the User's computer with the Terms version, date and time. When the Terms change, the Software will ask for a new acceptance.
+1.3. The User must be 18 or older, or be assisted by a legal guardian.
+
+2. LICENSE AND OWNERSHIP
+2.1. The Owner grants the User a personal, limited, revocable, non-exclusive and non-transferable license to install and use the Software and the Library (defined in clause 3) on computers the User owns or controls.
+2.2. The Software and the Library are licensed, not sold. All rights in the software, code, harmonic analysis, chord and key detection algorithms, automatic arranger and voice leading, audio engine, interface, images, icon, texts, factory presets and arrangements, the "SeniorMy" and "SeniorMy Structure" name and trademark, as well as the editing, processing, mapping, selection, organization and compilation of the Library belong exclusively to W. Carolino – CNPJ 69.610.819/0001-77, and are protected by Brazilian Law No. 9,609/1998 (Software Law), Law No. 9,610/1998 (Copyright) and Law No. 9,279/1996 (Industrial Property).
+
+3. ORIGIN OF THE SOUNDS (THE "LIBRARY")
+3.1. The Software's orchestral sounds are built from recordings of the "VS Chamber Orchestra: Community Edition" library (VSCO 2 CE) by Versilian Studios (recorded by Sam Gossner and Simon Dalzell), released under the Creative Commons CC0 1.0 license (public domain dedication). Those recordings were selected, trimmed, normalized, processed, mapped and organized by the Owner. The origin and license of each recording are listed in the Library's LICENSE-SOURCES.txt file and on the Software's "About" screen.
+3.2. These Terms do not restrict anyone's rights over the original public-domain recordings; the Owner's rights cover the Software and the Owner's editing, processing, mapping, selection, organization and compilation.
+3.3. When the Library is not installed, the Software uses fallback sounds synthesized by the Owner.
+
+4. USE OF THE SOFTWARE, THE LIBRARY AND THE GENERATED PARTS
+4.1. The User may use the audio and MIDI produced with the Software – including the automatically generated string parts and lines – royalty-free, inside the User's own musical and audiovisual works (songs, scores, videos, podcasts, games, live performances), including for commercial purposes, without paying anything beyond what may have been paid for the license and without having to give credit.
+4.2. It is forbidden to extract, redistribute, sell, resell, sublicense, share or make available the Library sounds, presets or factory arrangements on their own or as part of another sample, preset or virtual instrument product – original or modified –, and to use them to create products that compete with the Software.
+4.3. Ownership of the Software and the Library remains with the Owner; the User only receives the right of use described above.
+
+5. YOUR AUDIO IS YOURS – AND THE MATERIAL YOU IMPORT OR ANALYZE
+5.1. The songs, recordings, arrangements, user presets and other content created in the Software ("User Content") belong to the User. The Owner claims no rights over them.
+5.2. The Software analyzes the audio and MIDI the User sends to it and lets the User import external files (WAV, AIFF, FLAC, MP3 and MIDI). All analyzed or imported material is the User's sole responsibility: the User must hold the necessary rights to every recording, loop or MIDI file, and is liable for any infringement of copyright, related rights, voice or image rights.
+5.3. The harmonic analysis and the generated parts are automatic suggestions. The User is responsible for reviewing the musical result before publishing it.
+
+6. RESTRICTIONS
+Without the Owner's prior written authorization, it is forbidden to:
+a) copy, sell, rent, sublicense, distribute or make available the Software, the Library or the installer to third parties;
+b) decompile, disassemble, reverse engineer, extract the code, the algorithms or the Library, or modify the Software, except to the extent the law expressly permits;
+c) remove or alter copyright notices, credits or trademarks;
+d) circumvent acceptance of these Terms or any protection mechanism;
+e) use the Software for unlawful purposes.
+
+7. PRIVACY
+The Software works locally. It does not collect, store off the computer or transmit the User's personal data, files or audio. Analyzed audio is processed in memory only, in real time. The acceptance record and user presets stay on the User's computer only. The Software does not download anything automatically.
+
+8. TRADEMARKS AND NO AFFILIATION
+8.1. The images, logo and icon shown in the Software belong to the Owner.
+8.2. Third-party names mentioned in the Software or in these Terms – such as Versilian Studios, VSCO, Audio Unit, VST and DAW names – are used only for credit or descriptively. The Owner is not affiliated with them, and the mention does not imply any connection, sponsorship or endorsement. VST is a registered trademark of Steinberg Media Technologies GmbH.
+
+9. THIRD-PARTY COMPONENTS
+The Software is built with the JUCE framework and the VST3 SDK, used under their respective licenses, whose notices accompany the Software in the third-party notices file. Those licenses apply only to those components.
+
+10. NO WARRANTIES
+The Software and the Library are provided "as is" and may contain errors. Chord and key detection on polyphonic audio is approximate and may be wrong, especially on dense recordings, with percussion, distortion or non-standard tuning. There is no warranty of uninterrupted operation, of compatibility with any particular operating system, computer, audio interface, DAW or file format, or of fitness for a particular purpose. The User is responsible for keeping backups of projects and for setting volume levels that protect hearing and equipment.
+
+11. LIMITATION OF LIABILITY
+To the maximum extent permitted by law, the Owner is not liable for indirect or incidental damages, lost profits, lost revenue, loss of data, projects or recordings, interruption of work or performances, or damage to equipment or hearing arising from the use of or inability to use the Software. If any liability is recognized, it is limited to the amount actually paid by the User for the license, if any. Nothing in these Terms excludes rights guaranteed by Brazilian Law No. 8,078/1990 (Consumer Protection Code), where applicable.
+
+12. UPDATES AND TERMINATION
+12.1. The Owner may change, update or discontinue the Software, the Library and these Terms at any time. The new version of the Terms will be shown in the Software and must be accepted to continue using it.
+12.2. The license terminates automatically if these Terms are breached, and the User must uninstall and delete all copies, without prejudice to applicable civil and criminal remedies. Musical works lawfully created with the Software before termination may still be exploited by the User. Obligations regarding intellectual property and liability survive termination.
+
+13. GENERAL PROVISIONS
+13.1. If any clause is held invalid, the remaining clauses stay in force.
+13.2. Tolerance of any breach does not constitute a waiver of rights.
+13.3. If these Terms exist in other languages, the Portuguese version prevails.
+13.4. These Terms are governed by the laws of the Federative Republic of Brazil. The courts of the District of Taboão da Serra/SP, Brazil, are elected to settle any dispute, without prejudice to the consumer's right to sue in the courts of the consumer's domicile.
+
+SeniorMy Structure – © 2026 W. Carolino – SeniorMy – CNPJ 69.610.819/0001-77. All rights reserved.

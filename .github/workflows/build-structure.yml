@@ -1,0 +1,284 @@
+name: build-seniormy-structure
+# Execução manual (Actions → build-seniormy-structure → Run workflow). Gera os instaladores
+# macOS (.pkg universal x86_64+arm64, macOS 10.13+) e Windows x64 (.exe + .zip) e publica uma Release.
+on:
+  workflow_dispatch:
+    inputs:
+      publish_release:
+        description: "Publicar Release no GitHub (tag v<versão>)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-structure
+  cancel-in-progress: true
+
+env:
+  LIB_CACHE_KEY: structure-vsco2ce-4403009-v1
+
+jobs:
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Xcode 16.4 (gera para macOS 10.13)
+        run: sudo xcode-select -s /Applications/Xcode_16.4.app
+      - name: Restaurar downloads do VSCO 2 CE
+        id: libcache
+        uses: actions/cache/restore@v4
+        with:
+          path: samples-cache
+          key: ${{ env.LIB_CACHE_KEY }}
+      - name: Biblioteca orquestral (VSCO 2 CE, CC0 → FLAC 24 bits)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -o pipefail
+          mkdir -p logs
+          python3 -m venv venv && . venv/bin/activate && pip install -q numpy soundfile
+          python scripts/prepare_library.py samples-cache library 2>&1 | tee logs/library.log
+          du -sh library | tee -a logs/library.log
+      - name: Salvar downloads do VSCO 2 CE
+        if: steps.libcache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: samples-cache
+          key: ${{ env.LIB_CACHE_KEY }}
+      - name: Configurar
+        run: |
+          set -o pipefail
+          cmake -B build -G Xcode -DCMAKE_OSX_DEPLOYMENT_TARGET=10.13 "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64" 2>&1 | tee logs/mac-build.log
+      - name: Teste do núcleo (harmonia, acordes, vozes, arranjador, motor)
+        run: |
+          set -o pipefail
+          cmake --build build --config Release --target core_test -- -quiet 2>&1 | tee -a logs/mac-build.log
+          ./build/Release/core_test | tee logs/core-test-mac.txt
+      - name: Teste da biblioteca e da importação (JUCE)
+        run: |
+          set -o pipefail
+          cmake --build build --config Release --target library_test -- -quiet 2>&1 | tee -a logs/mac-build.log
+          P=$(find build -name library_test -type f -perm -u+x | head -1)
+          "$P" library 2>&1 | tee logs/library-test-mac.txt
+      - name: Compilar (AU + VST3 + app, universal)
+        run: |
+          set -o pipefail
+          cmake --build build --config Release --target SeniorMyStructure_All --parallel 4 -- -quiet 2>&1 | tee -a logs/mac-build.log
+      - name: Conferir binários (x86_64 + arm64, mínimo 10.13)
+        run: |
+          A=build/SeniorMyStructure_artefacts/Release
+          for f in "$A/AU/SeniorMy Structure.component/Contents/MacOS/SeniorMy Structure" \
+                   "$A/VST3/SeniorMy Structure.vst3/Contents/MacOS/SeniorMy Structure" \
+                   "$A/Standalone/SeniorMy Structure.app/Contents/MacOS/SeniorMy Structure"; do
+            lipo -info "$f" | tee -a logs/binaries.txt
+            lipo -info "$f" | grep -q x86_64 && lipo -info "$f" | grep -q arm64
+            otool -l "$f" | grep -A4 -E "LC_VERSION_MIN_MACOSX|LC_BUILD_VERSION" | head -6 | tee -a logs/binaries.txt
+          done
+      - name: Validar Audio Unit (auval, instrumento)
+        run: |
+          mkdir -p ~/Library/Audio/Plug-Ins/Components
+          cp -R "build/SeniorMyStructure_artefacts/Release/AU/SeniorMy Structure.component" ~/Library/Audio/Plug-Ins/Components/
+          killall -9 AudioComponentRegistrar || true
+          sleep 3
+          auval -v aumu SmSt Smny | tee logs/auval.txt
+          grep -q "AU VALIDATION SUCCEEDED" logs/auval.txt
+      - name: Validar VST3 (pluginval)
+        run: |
+          set -o pipefail
+          curl -sL -o pv.zip https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_macOS.zip
+          unzip -q pv.zip
+          ./pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --skip-gui-tests --validate-in-process \
+            --validate "build/SeniorMyStructure_artefacts/Release/VST3/SeniorMy Structure.vst3" 2>&1 | tee logs/pluginval-mac.txt
+      - name: Abrir o app por 25 s (com capturas de tela)
+        run: |
+          mkdir -p shots
+          SENIORMY_STRUCTURE_LIBRARY="$PWD/library" SENIORMY_SNAPSHOT_DIR="$PWD/shots" \
+            "build/SeniorMyStructure_artefacts/Release/Standalone/SeniorMy Structure.app/Contents/MacOS/SeniorMy Structure" &
+          PID=$!; sleep 25
+          if kill -0 $PID 2>/dev/null; then echo "app aberto"; kill $PID; else echo "app fechou sozinho"; exit 1; fi
+          ls -la shots
+      - name: Instalador .pkg
+        run: bash scripts/mac/package.sh
+      - name: Teste — instalar o .pkg
+        run: |
+          set -o pipefail
+          sudo installer -pkg dist/*.pkg -target / -verbose 2>&1 | tee logs/mac-install.log
+          for p in "/Applications/SeniorMy Structure.app" "/Library/Audio/Plug-Ins/Components/SeniorMy Structure.component" \
+                   "/Library/Audio/Plug-Ins/VST3/SeniorMy Structure.vst3" "/Library/Application Support/SeniorMy/Structure Library/library.json"; do
+            if [ -e "$p" ]; then echo "ok: $p"; else echo "FALTA: $p"; exit 1; fi
+          done | tee logs/mac-install-result.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SeniorMy-Structure-macOS
+          path: dist/*.pkg
+          compression-level: 0
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screenshots-macos
+          path: shots/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: logs-macos
+          path: logs/
+
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 100
+    env:
+      PYTHONUTF8: 1
+      PYTHONIOENCODING: utf-8
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restaurar downloads do VSCO 2 CE
+        id: libcache
+        uses: actions/cache/restore@v4
+        with:
+          path: samples-cache
+          key: ${{ env.LIB_CACHE_KEY }}-win
+      - name: Biblioteca orquestral (VSCO 2 CE, CC0 → FLAC 24 bits)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          New-Item -ItemType Directory -Force logs | Out-Null
+          pip install -q numpy soundfile
+          python scripts/prepare_library.py samples-cache library 2>&1 | Tee-Object logs\library.log
+          if ($LASTEXITCODE) { throw 'prepare_library falhou' }
+      - name: Salvar downloads do VSCO 2 CE
+        if: steps.libcache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: samples-cache
+          key: ${{ env.LIB_CACHE_KEY }}-win
+      - name: Configurar (Visual Studio, x64)
+        run: |
+          cmake -B build -A x64 2>&1 | Tee-Object logs\win-build.log
+          if ($LASTEXITCODE) { throw 'cmake configure falhou' }
+      - name: Teste do núcleo
+        run: |
+          cmake --build build --config Release --target core_test 2>&1 | Tee-Object -Append logs\win-build.log
+          if ($LASTEXITCODE) { throw 'build do teste falhou' }
+          build\Release\core_test.exe | Tee-Object logs\core-test-win.txt
+          if ($LASTEXITCODE) { throw 'teste do núcleo falhou' }
+      - name: Teste da biblioteca e da importação (JUCE)
+        run: |
+          cmake --build build --config Release --target library_test 2>&1 | Tee-Object -Append logs\win-build.log
+          if ($LASTEXITCODE) { Get-Content logs\win-build.log | Select-String -Pattern 'error' | Select-Object -First 40; throw 'build do library_test falhou' }
+          $p = (Get-ChildItem -Recurse build -Filter library_test.exe | Select-Object -First 1).FullName
+          & $p library 2>&1 | Tee-Object logs\library-test-win.txt
+          if ($LASTEXITCODE) { throw 'teste da biblioteca falhou' }
+      - name: Compilar (VST3 + app)
+        run: |
+          cmake --build build --config Release --target SeniorMyStructure_All --parallel 4 2>&1 | Tee-Object -Append logs\win-build.log
+          if ($LASTEXITCODE) { Get-Content logs\win-build.log | Select-String -Pattern 'error' | Select-Object -First 60; throw 'build falhou' }
+      - name: Validar VST3 (pluginval)
+        run: |
+          Invoke-WebRequest -Uri https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_Windows.zip -OutFile pv.zip
+          Expand-Archive pv.zip -DestinationPath pv
+          $p = Start-Process pv\pluginval.exe -ArgumentList '--strictness-level','5','--skip-gui-tests','--validate-in-process','--validate','"build\SeniorMyStructure_artefacts\Release\VST3\SeniorMy Structure.vst3"' -NoNewWindow -Wait -PassThru -RedirectStandardOutput logs\pluginval-win.txt
+          Get-Content logs\pluginval-win.txt | Select-Object -Last 40
+          if ($p.ExitCode -ne 0) { throw "pluginval falhou ($($p.ExitCode))" }
+      - name: Abrir o app por 25 s (com capturas de tela)
+        run: |
+          New-Item -ItemType Directory -Force shots | Out-Null
+          $env:SENIORMY_SNAPSHOT_DIR = "$PWD\shots"
+          $env:SENIORMY_STRUCTURE_LIBRARY = "$PWD\library"
+          $p = Start-Process "build\SeniorMyStructure_artefacts\Release\Standalone\SeniorMy Structure.exe" -PassThru
+          Start-Sleep -Seconds 25
+          $alive = -not $p.HasExited
+          "app aberto: $alive" | Tee-Object logs\win-launch.txt
+          if ($alive) { Stop-Process -Id $p.Id -Force } else { throw "app fechou sozinho ($($p.ExitCode))" }
+      - name: Instalador (Inno Setup) + zip portátil
+        run: |
+          $ver = (Select-String -Path CMakeLists.txt -Pattern 'project\(SeniorMyStructure VERSION ([0-9.]+)').Matches[0].Groups[1].Value
+          foreach ($l in 'pt-BR','en') {
+            $txt = Get-Content "Resources\legal\termos-$l.txt" -Raw -Encoding UTF8
+            [IO.File]::WriteAllText("$PWD\scripts\win\license-$l.txt", $txt, (New-Object System.Text.UTF8Encoding $true))
+          }
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) { choco install innosetup -y --no-progress | Out-Null }
+          & $iscc "/DAppVersion=$ver" scripts\win\installer.iss
+          if ($LASTEXITCODE) { throw 'ISCC falhou' }
+          $z = "zipstage\SeniorMy Structure $ver"
+          New-Item -ItemType Directory -Force $z | Out-Null
+          Copy-Item "build\SeniorMyStructure_artefacts\Release\Standalone\SeniorMy Structure.exe" $z
+          Copy-Item -Recurse "build\SeniorMyStructure_artefacts\Release\VST3\SeniorMy Structure.vst3" $z
+          Copy-Item -Recurse library "$z\Structure Library"
+          Copy-Item Resources\legal\termos-pt-BR.txt "$z\Termos de Uso (pt-BR).txt"
+          Copy-Item Resources\legal\termos-en.txt "$z\Terms of Use (en).txt"
+          Copy-Item Resources\legal\THIRD-PARTY-NOTICES.txt $z
+          "Copie 'SeniorMy Structure.vst3' para C:\Program Files\Common Files\VST3 e a pasta 'Structure Library' para C:\Users\Public\Documents\SeniorMy\. Os Termos de Uso precisam ser aceitos na primeira abertura." | Out-File -Encoding utf8 "$z\LEIA-ME.txt"
+          Compress-Archive -Path "zipstage\*" -DestinationPath "dist\SeniorMy-Structure-$ver-Windows-x64.zip"
+          Get-ChildItem dist | Format-Table Name, Length
+      - name: Teste — instalar e desinstalar (silencioso)
+        run: |
+          $exe = (Get-ChildItem dist\*.exe)[0].FullName
+          $p = Start-Process $exe -ArgumentList '/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/LANG=ptbr','/LOG=logs\install.log' -Wait -PassThru
+          $pub = [Environment]::GetFolderPath('CommonDocuments')
+          $app = Test-Path "$env:ProgramFiles\SeniorMy\SeniorMy Structure\SeniorMy Structure.exe"
+          $vst = Test-Path "$env:CommonProgramFiles\VST3\SeniorMy Structure.vst3\Contents\x86_64-win\SeniorMy Structure.vst3"
+          $lib = Test-Path "$pub\SeniorMy\Structure Library\library.json"
+          "instalado: app $app, vst3 $vst, biblioteca $lib (código $($p.ExitCode))" | Tee-Object logs\install-result.txt
+          if (-not $app -or -not $vst -or -not $lib) { throw 'instalação incompleta' }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SeniorMy-Structure-Windows-x64
+          path: |
+            dist/*.exe
+            dist/*.zip
+          compression-level: 0
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: screenshots-windows
+          path: shots/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: logs-windows
+          path: logs/
+
+  release:
+    needs: [macos, windows]
+    if: ${{ inputs.publish_release }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Versão
+        id: ver
+        run: echo "version=$(sed -n 's/^project(SeniorMyStructure VERSION \([0-9.]*\).*/\1/p' CMakeLists.txt)" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@v4
+        with:
+          name: SeniorMy-Structure-macOS
+          path: out
+      - uses: actions/download-artifact@v4
+        with:
+          name: SeniorMy-Structure-Windows-x64
+          path: out
+      - name: Somas SHA-256
+        run: cd out && sha256sum * > SHA256SUMS.txt && cat SHA256SUMS.txt
+      - name: Publicar Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.ver.outputs.version }}
+          name: SeniorMy Structure ${{ steps.ver.outputs.version }}
+          body: |
+            SeniorMy Structure ${{ steps.ver.outputs.version }} — coberturas orquestrais automáticas.
+            - macOS: instalador .pkg universal (Intel + Apple Silicon), macOS 10.13 ou superior — app, AU, VST3 e biblioteca.
+            - Windows: instalador .exe (x64, Windows 10+) e .zip portátil — app, VST3 e biblioteca.
+            Instaladores sem assinatura de desenvolvedor (macOS: clique com o botão direito → Abrir; Windows: "Mais informações → Executar assim mesmo").
+            Amostras: VSCO 2 Community Edition (CC0) — Versilian Studios / Sam Gossner, Ivy Audio / Simon Dalzell.
+            © 2026 W. Carolino — SeniorMy — CNPJ 69.610.819/0001-77. Todos os direitos reservados.
+          files: out/*

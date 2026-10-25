@@ -1,0 +1,31 @@
+SeniorMy Structure — créditos, licenças e avisos de terceiros / credits, licenses and third-party notices
+© 2026 W. Carolino — SeniorMy — CNPJ 69.610.819/0001-77. Todos os direitos reservados / All rights reserved.
+
+1) AMOSTRAS ORQUESTRAIS / ORCHESTRAL SAMPLES
+   VS Chamber Orchestra: Community Edition (VSCO 2 CE) 1.1.0 — Versilian Studios LLC
+   Gravação / Recorded by: Sam Gossner & Simon Dalzell (Ivy Audio) · Corte / Sample cutting: Elan Hickler (Soundemote)
+   Página / Homepage: http://vis.versilstudios.net/vsco-community.html
+   Fonte / Source: https://github.com/sgossner/VSCO-2-CE (commit 440300901dfe9275fd84e0b7763af1f8443ae62e)
+   Licença / License: Creative Commons CC0 1.0 Universal (dedicação ao domínio público / public domain dedication)
+   https://creativecommons.org/publicdomain/zero/1.0/
+   Seções usadas / Sections used: Violin Section, Viola Section, Cello Section, Solo Contrabass,
+   Solo Violin (arco vibrato), French Horn (sustain/staccato).
+   Os autores pedem crédito à Versilian Studios / Sam Gossner e Ivy Audio / Simon Dalzell e um link para a
+   página do VSCO CE — atendido nesta tela. The authors ask for credit and a link to the VSCO CE homepage —
+   provided here. As amostras foram cortadas, normalizadas, processadas e mapeadas pela SeniorMy; a lista
+   arquivo a arquivo está em LICENSE-SOURCES.txt, na pasta da biblioteca.
+
+2) JUCE
+   Framework JUCE (https://juce.com) — © Raw Material Software Limited. Usado conforme a licença JUCE 8.
+   Used under the JUCE 8 license terms.
+
+3) VST3 SDK
+   VST is a registered trademark of Steinberg Media Technologies GmbH. O SDK VST3 é usado conforme sua
+   licença / The VST3 SDK is used under its license terms (see the SDK's LICENSE.txt).
+
+4) Audio Unit é marca da Apple Inc. / Audio Unit is a trademark of Apple Inc.
+
+O restante do Software — código de análise, arranjador, motor de áudio, piano interno, reverb, interface,
+presets e o banco de reserva sintetizado — é original da SeniorMy.
+All other parts of the Software — analysis code, arranger, audio engine, internal piano, reverb, interface,
+presets and the synthesized fallback bank — are original SeniorMy work.

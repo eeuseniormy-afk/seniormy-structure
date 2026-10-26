@@ -154,7 +154,7 @@ void ChordDiagram::paint (Graphics& g)
         else g.drawLine (x, board.getY(), x, board.getBottom(), 1.2f);
     }
     g.setFont (WoodLookAndFeel::uiFont (11.0f));
-    if (first > 1) { g.setColour (Wood::ivorySoft); g.drawText (String (first) + "ª", Rectangle<float> (board.getX() - 30.0f, board.getY(), 26.0f, fy).toNearestInt(), Justification::centredRight); }
+    if (first > 1) { g.setColour (Wood::ivorySoft); g.drawText (String (first) + String::fromUTF8 ("ª"), Rectangle<float> (board.getX() - 30.0f, board.getY(), 26.0f, fy).toNearestInt(), Justification::centredRight); }
     if (capo > 0) { g.setColour (Wood::gold); g.drawText ("Capo " + String (capo), Rectangle<float> (board.getRight() - 60.0f, board.getY() - 18.0f, 60.0f, 14.0f).toNearestInt(), Justification::centredRight); }
     for (int i = 0; i < n; ++i)
     {
@@ -233,9 +233,6 @@ void PatternGrid::paint (Graphics& g)
             }
         }
     }
-    g.setColour (Wood::ivorySoft);
-    g.setFont (WoodLookAndFeel::uiFont (11.0f));
-    g.drawText (String::fromUTF8 ("clique: liga/desliga · arraste: pinta · botão direito ou Shift: muda a força"), Rectangle<float> (4.0f, 0, 126.0f, 16.0f).toNearestInt(), Justification::centredLeft);
     (void) indexOfRow (0);
 }
 

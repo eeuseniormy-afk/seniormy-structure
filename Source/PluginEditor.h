@@ -101,7 +101,8 @@ private:
 
     // Padrão
     juce::ComboBox patternBox, spbBox, stepsBox;
-    juce::Label patternL, spbL, stepsL;
+    juce::Label patternL, spbL, stepsL, gridHint;
+    int lastPlaying = -2;
     juce::TextButton savePattern { juce::String::fromUTF8 ("Salvar padrão") }, clearPattern { "Limpar grade" };
     LabeledKnob swing { "Swing", 0, 0.6, 0.01, 0 }, strum { "Velocidade da batida", 0.1, 3.0, 0.01, 1.0, "x" },
                 humanize { "Humanizar", 0, 1, 0.01, 0.35 }, palm { "Abafar (palma)", 0, 1, 0.01, 0 }, accent { juce::String::fromUTF8 ("Acentuação"), 0, 1, 0.01, 0.5 };

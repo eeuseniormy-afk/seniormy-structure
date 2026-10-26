@@ -113,9 +113,9 @@ inline const std::vector<InstrumentDef>& instruments()
             InstrumentDef d { "twelve", "Violão 12 Cordas", "12-String Guitar", Source::Derived, "steel",
                 { { "Padrão 12 cordas", { {40, 52}, {45, 57}, {50, 62}, {55, 67}, {59, 59}, {64, 64} } },
                   { "Meio tom abaixo", { {39, 51}, {44, 56}, {49, 61}, {54, 66}, {58, 58}, {63, 63} } } } };
-            d.numFrets = 15; d.strumMs = 40; d.twelveOctaveGain = 0.62f; d.release = 0.25f; d.gainDb = -2.0f;
-            d.colour = 0xffb48cff; d.imageName = "twelve_png";
+            d.numFrets = 15; d.strumMs = 40; d.twelveOctaveGain = 0.62f; d.release = 0.25f; d.colour = 0xffb48cff; d.imageName = "twelve_png";
             d.notePt = "Derivado do violão de aço: ordens em oitava/uníssono com cordas reais mais agudas";
+            d.gainDb = 0.0f;
             v.push_back (d);
         }
         {
@@ -124,40 +124,40 @@ inline const std::vector<InstrumentDef>& instruments()
                   { "Cebolão em Ré", { {45, 57}, {50, 62}, {54, 66}, {57, 57}, {62, 62} } },
                   { "Rio Abaixo (Sol)", { {43, 55}, {50, 62}, {55, 67}, {59, 59}, {62, 62} } },
                   { "Boiadeira (Mi)", { {47, 59}, {52, 64}, {56, 68}, {59, 59}, {62, 62} } } } };
-            d.numFrets = 12; d.maxSpan = 4; d.strumMs = 28; d.release = 0.2f; d.gainDb = 0.0f;
-            d.colour = 0xffe0a040; d.imageName = "viola_png";
+            d.numFrets = 12; d.maxSpan = 4; d.strumMs = 28; d.release = 0.2f; d.colour = 0xffe0a040; d.imageName = "viola_png";
             d.notePt = "Modelado: guia de onda com 5 ordens duplas (oitavas) e corpo modal";
             d.model.t60Low = 7.0f; d.model.t60High = 2.2f; d.model.brightness = 0.78f; d.model.pickPos = 0.11f;
             d.model.pairDetuneCents = 3.0f; d.model.pairGain = 0.85f;
             d.model.bodyHz = { 120, 235, 410, 760, 1450, 2900 }; d.model.bodyQ = { 9, 10, 9, 7, 5, 4 };
             d.model.bodyGain = { 0.5f, 0.5f, 0.38f, 0.3f, 0.28f, 0.22f }; d.model.bodyMix = 0.55f; d.model.noise = 0.32f;
             d.bassWeight = 0.2f;
+            d.gainDb = -3.0f;
             v.push_back (d);
         }
         {
             InstrumentDef d { "cavaquinho", "Cavaquinho", "Cavaquinho", Source::Modeled, "",
                 { { "Natural (D G B D)", { {62}, {67}, {71}, {74} } },
                   { "Afinação de choro (D G B E)", { {62}, {67}, {71}, {76} } } } };
-            d.numFrets = 14; d.maxSpan = 4; d.strumMs = 14; d.release = 0.1f; d.gainDb = -1.0f;
-            d.colour = 0xff8a5a3a; d.imageName = "cavaquinho_png";
+            d.numFrets = 14; d.maxSpan = 4; d.strumMs = 14; d.release = 0.1f; d.colour = 0xff8a5a3a; d.imageName = "cavaquinho_png";
             d.notePt = "Modelado: guia de onda de cordas de aço e corpo pequeno";
             d.model.t60Low = 3.2f; d.model.t60High = 1.1f; d.model.brightness = 0.82f; d.model.pickPos = 0.12f;
             d.model.bodyHz = { 230, 420, 780, 1350, 2400, 4200 }; d.model.bodyQ = { 8, 9, 8, 6, 5, 4 };
             d.model.bodyGain = { 0.45f, 0.5f, 0.4f, 0.32f, 0.26f, 0.2f }; d.model.bodyMix = 0.6f; d.model.noise = 0.35f;
             d.bassWeight = 0.2f;
+            d.gainDb = 0.0f;
             v.push_back (d);
         }
         {
             InstrumentDef d { "mandolin", "Bandolim", "Mandolin", Source::Modeled, "",
                 { { "Padrão (G D A E)", { {55, 55}, {62, 62}, {69, 69}, {76, 76} } } } };
-            d.numFrets = 17; d.maxSpan = 5; d.strumMs = 16; d.release = 0.12f; d.gainDb = -1.5f;
-            d.colour = 0xffc0303a; d.imageName = "mandolin_png";
+            d.numFrets = 17; d.maxSpan = 5; d.strumMs = 16; d.release = 0.12f; d.colour = 0xffc0303a; d.imageName = "mandolin_png";
             d.notePt = "Modelado: guia de onda com 4 ordens duplas em uníssono e tampo arqueado";
             d.model.t60Low = 3.6f; d.model.t60High = 1.0f; d.model.brightness = 0.8f; d.model.pickPos = 0.13f;
             d.model.pairDetuneCents = 3.5f; d.model.pairGain = 0.9f;
             d.model.bodyHz = { 280, 540, 1050, 1750, 2900, 4600 }; d.model.bodyQ = { 9, 9, 8, 6, 5, 4 };
             d.model.bodyGain = { 0.4f, 0.48f, 0.42f, 0.34f, 0.28f, 0.2f }; d.model.bodyMix = 0.62f; d.model.noise = 0.38f;
             d.bassWeight = 0.2f;
+            d.gainDb = -1.0f;
             v.push_back (d);
         }
         {
@@ -168,26 +168,27 @@ inline const std::vector<InstrumentDef>& instruments()
             d.colour = 0xffe08a20; d.imageName = "ukulele_png";
             d.notePt = "Gravado: ukulele tenor (Mateusz Dąbrowski / FreePats, CC0)";
             d.bassWeight = 0.2f;
+            d.gainDb = 2.0f;
             v.push_back (d);
         }
         {
             InstrumentDef d { "banjo", "Banjo", "Banjo", Source::Sampled, "banjo",
                 { { "Sol aberto (g D G B D)", { {67, -1, true}, {50}, {55}, {59}, {62} } },
                   { "Dó dupla (g C G C D)", { {67, -1, true}, {48}, {55}, {60}, {62} } } } };
-            d.numFrets = 17; d.maxSpan = 4; d.strumMs = 18; d.release = 0.1f; d.gainDb = -1.0f;
-            d.colour = 0xffe8e2d0; d.imageName = "banjo_png";
+            d.numFrets = 17; d.maxSpan = 4; d.strumMs = 18; d.release = 0.1f; d.colour = 0xffe8e2d0; d.imageName = "banjo_png";
             d.notePt = "Gravado: banjo SX (itsclipping, CC0), tocado na afinação de 5 cordas";
             d.bassWeight = 0.2f;
+            d.gainDb = 6.0f;
             v.push_back (d);
         }
         {
             InstrumentDef d { "sitar", "Cítara Indiana (Sitar)", "Sitar", Source::Sampled, "sitar",
                 { { "Sa-Pa (C G C)", { {48}, {55}, {60}, {67} } },
                   { "Sa-Ma (C F C)", { {48}, {53}, {60}, {65} } } } };
-            d.numFrets = 19; d.maxSpan = 5; d.strumMs = 45; d.release = 0.4f; d.gainDb = -1.0f;
-            d.colour = 0xff9a6a30; d.imageName = "sitar_png";
+            d.numFrets = 19; d.maxSpan = 5; d.strumMs = 45; d.release = 0.4f; d.colour = 0xff9a6a30; d.imageName = "sitar_png";
             d.notePt = "Gravado: sitar (Dr. Narayan B. Raikar, CC0)";
             d.bassWeight = 0.2f;
+            d.gainDb = 3.0f;
             v.push_back (d);
         }
         return v;

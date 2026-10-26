@@ -112,7 +112,7 @@ public:
         type = Sample; zone = &z;
         pos = 0;
         inc = std::pow (2.0, ((double) (v.note - z.root) * 100.0 + z.tuneCents + v.cents) / 1200.0) * z.data->sampleRate / sr;
-        amp = v.gain * z.gain * std::pow (10.0f, setGainDb / 20.0f) * velCurve (v.vel);
+        amp = 0.45f * v.gain * z.gain * std::pow (10.0f, setGainDb / 20.0f) * velCurve (v.vel);
         // brilho por velocity e abafamento
         float fc = 1400.0f * std::pow (2.0f, v.vel * 3.6f);
         if (v.kind == 1) fc = 900.0f + 500.0f * v.vel;
@@ -162,7 +162,7 @@ public:
             float prev = line[(size_t) (N - 1)];
             for (int i = 0; i < N; ++i) { const float cur = line[(size_t) i]; line[(size_t) i] = 0.5f * (cur + prev); prev = cur; }
         }
-        amp = v.gain * velCurve (v.vel) * 0.55f;
+        amp = v.gain * velCurve (v.vel) * 0.8f;
         clickLeft = (int) (0.004 * sr); clickAmp = amp * m.noise * 0.6f * v.vel;
         clickHp.setCutoff (2500.0f, (float) sr);
         silentCount = 0;

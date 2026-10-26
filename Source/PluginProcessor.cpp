@@ -11,15 +11,15 @@ AudioProcessorValueTreeState::ParameterLayout GuitarsProcessor::createLayout()
     v.push_back (std::make_unique<AudioParameterFloat> (ParameterID { "master", 1 }, "Volume geral", NormalisableRange<float> (-36.0f, 6.0f, 0.1f), -3.0f));
     v.push_back (std::make_unique<AudioParameterFloat> (ParameterID { "reverb", 1 }, "Reverb (sala)", NormalisableRange<float> (0.0f, 1.0f, 0.001f), 0.22f));
     v.push_back (std::make_unique<AudioParameterFloat> (ParameterID { "bpm", 1 }, "BPM interno", NormalisableRange<float> (40.0f, 240.0f, 0.1f), 96.0f));
-    v.push_back (std::make_unique<AudioParameterBool> (ParameterID { "play", 1 }, "Tocar (relógio interno)", false));
+    v.push_back (std::make_unique<AudioParameterBool> (ParameterID { "play", 1 }, String::fromUTF8 ("Tocar (relógio interno)"), false));
     for (int p = 0; p < sms::kParts; ++p)
-        v.push_back (std::make_unique<AudioParameterFloat> (ParameterID { "level" + String (p + 1), 1 }, "Nível parte " + String (p + 1),
+        v.push_back (std::make_unique<AudioParameterFloat> (ParameterID { "level" + String (p + 1), 1 }, String::fromUTF8 ("Nível parte ") + String (p + 1),
                                                             NormalisableRange<float> (-48.0f, 6.0f, 0.1f), 0.0f));
     return { v.begin(), v.end() };
 }
 
 GuitarsProcessor::GuitarsProcessor()
-    : AudioProcessor (BusesProperties().withOutput ("Saída", AudioChannelSet::stereo(), true)),
+    : AudioProcessor (BusesProperties().withOutput (String::fromUTF8 ("Saída"), AudioChannelSet::stereo(), true)),
       apvts (*this, nullptr, "GUITARS", createLayout())
 {
     ptr.master = apvts.getRawParameterValue ("master");

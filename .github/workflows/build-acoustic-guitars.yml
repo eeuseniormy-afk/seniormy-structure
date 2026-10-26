@@ -76,12 +76,12 @@ jobs:
           unzip -q pv.zip
           ./pluginval.app/Contents/MacOS/pluginval --strictness-level 5 --skip-gui-tests --validate-in-process \
             --validate "build/SeniorMyAcousticGuitars_artefacts/Release/VST3/SeniorMy Acoustic Guitars.vst3" 2>&1 | tee logs/pluginval-mac.txt
-      - name: Abrir o app por 25 s (com capturas de tela)
+      - name: Abrir o app por 45 s (com capturas de tela)
         run: |
           mkdir -p shots
           SENIORMY_GUITARS_LIBRARY="$PWD/library" SENIORMY_SNAPSHOT_DIR="$PWD/shots" \
             "build/SeniorMyAcousticGuitars_artefacts/Release/Standalone/SeniorMy Acoustic Guitars.app/Contents/MacOS/SeniorMy Acoustic Guitars" &
-          PID=$!; sleep 25
+          PID=$!; sleep 45
           if kill -0 $PID 2>/dev/null; then echo "app aberto"; kill $PID; else echo "app fechou sozinho"; exit 1; fi
           ls -la shots
       - name: Instalador .pkg
@@ -158,13 +158,13 @@ jobs:
           $p = Start-Process pv\pluginval.exe -ArgumentList '--strictness-level','5','--skip-gui-tests','--validate-in-process','--validate','"build\SeniorMyAcousticGuitars_artefacts\Release\VST3\SeniorMy Acoustic Guitars.vst3"' -NoNewWindow -Wait -PassThru -RedirectStandardOutput logs\pluginval-win.txt
           Get-Content logs\pluginval-win.txt | Select-Object -Last 40
           if ($p.ExitCode -ne 0) { throw "pluginval falhou ($($p.ExitCode))" }
-      - name: Abrir o app por 25 s (com capturas de tela)
+      - name: Abrir o app por 45 s (com capturas de tela)
         run: |
           New-Item -ItemType Directory -Force shots | Out-Null
           $env:SENIORMY_SNAPSHOT_DIR = "$PWD\shots"
           $env:SENIORMY_GUITARS_LIBRARY = "$PWD\library"
           $p = Start-Process "build\SeniorMyAcousticGuitars_artefacts\Release\Standalone\SeniorMy Acoustic Guitars.exe" -PassThru
-          Start-Sleep -Seconds 25
+          Start-Sleep -Seconds 45
           $alive = -not $p.HasExited
           "app aberto: $alive" | Tee-Object logs\win-launch.txt
           if ($alive) { Stop-Process -Id $p.Id -Force } else { throw "app fechou sozinho ($($p.ExitCode))" }

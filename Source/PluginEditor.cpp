@@ -165,7 +165,7 @@ GuitarsEditor::GuitarsEditor (GuitarsProcessor& p) : AudioProcessorEditor (p), p
     for (auto* c : std::initializer_list<Component*> { &keyBox, &scaleBox, &splitBox, &beatsBox, &keyL, &scaleL, &splitL, &beatsL, &progHint, &importStatus,
                                                       &tetrads, &fieldMode, &latch, &progOn, &progStrip, &removeSlot, &clearProg, &importButton, &exportButton })
         pageHarm.addAndMakeVisible (c);
-    setupLabel (keyL, "Tom"); setupLabel (scaleL, "Escala / modo"); setupLabel (splitL, "Zona de acordes (mão esquerda) até");
+    setupLabel (keyL, "Tom"); setupLabel (scaleL, "Escala / modo"); setupLabel (splitL, utf ("Zona de acordes (mão esquerda) até"));
     setupLabel (beatsL, utf ("Duração do acorde selecionado"));
     setupLabel (progHint, utf ("Toque um acorde na mão esquerda (abaixo da divisão) e o instrumento toca o padrão. Ou monte uma progressão: escolha um quadro e clique num grau do campo harmônico."), 12.0f);
     setupLabel (importStatus, {}, 12.0f);
@@ -245,6 +245,8 @@ GuitarsEditor::GuitarsEditor (GuitarsProcessor& p) : AudioProcessorEditor (p), p
     for (auto* c : std::initializer_list<Component*> { &patternBox, &spbBox, &stepsBox, &patternL, &spbL, &stepsL, &savePattern, &clearPattern,
                                                       &swing, &strum, &humanize, &palm, &accent, &grid })
         pagePat.addAndMakeVisible (c);
+    pagePat.addAndMakeVisible (gridHint);
+    setupLabel (gridHint, utf ("Grade: clique liga/desliga · arraste pinta · botão direito ou Shift muda a força (forte → médio → suave → fantasma). Cordas: 1 = a mais aguda."), 12.0f);
     setupLabel (patternL, utf ("Padrão")); setupLabel (spbL, utf ("Subdivisão")); setupLabel (stepsL, "Passos");
     const int spbs[] = { 1, 2, 3, 4, 6, 8 };
     const char* spbNames[] = { "1 por tempo (semínima)", "2 por tempo (colcheia)", "3 por tempo (tercina)", "4 por tempo (semicolcheia)", "6 por tempo (sextina)", "8 por tempo (fusa)" };
@@ -359,13 +361,13 @@ void GuitarsEditor::resized()
     root.setTransform (AffineTransform::scale (sc));
 
     // cabeçalho
-    presetBox.setBounds (420, 20, 300, 32);
-    prevPreset.setBounds (386, 20, 30, 32); nextPreset.setBounds (724, 20, 30, 32);
-    savePreset.setBounds (760, 20, 70, 32); deletePreset.setBounds (834, 20, 70, 32);
+    presetBox.setBounds (420, 20, 262, 32);
+    prevPreset.setBounds (386, 20, 30, 32); nextPreset.setBounds (686, 20, 30, 32);
+    savePreset.setBounds (722, 20, 68, 32); deletePreset.setBounds (794, 20, 68, 32);
     termsButton.setBounds (1128, 14, 96, 22); aboutButton.setBounds (1128, 40, 96, 22);
-    bpmLabel.setBounds (912, 20, 36, 32); bpm.setBounds (944, 20, 110, 32);
+    bpmLabel.setBounds (870, 20, 34, 32); bpm.setBounds (900, 20, 154, 32);
     playButton.setBounds (1058, 14, 64, 24); stopButton.setBounds (1058, 40, 64, 22);
-    statusLabel.setBounds (420, 52, 484, 14);
+    statusLabel.setBounds (386, 52, 476, 14);
 
     for (int i = 0; i < sms::kParts; ++i) partButtons[(size_t) i].setBounds (310 + i * 200, 74, 194, 30);
     face.setBounds (10, 74, 290, 482);
@@ -424,6 +426,7 @@ void GuitarsEditor::layoutPages()
         savePattern.setBounds (r.getX() + 580, r.getY() + 20, 120, 30); clearPattern.setBounds (r.getX() + 706, r.getY() + 20, 110, 30);
         const int ky = r.getY() + 58; int kx = r.getX();
         for (auto* k : { &swing, &strum, &humanize, &palm, &accent }) { k->setBounds (kx, ky, 120, 74); kx += 128; }
+        gridHint.setBounds (kx + 6, ky + 6, r.getRight() - kx - 6, 62);
         grid.setBounds (r.getX(), ky + 80, r.getWidth(), r.getBottom() - (ky + 80));
     }
     r = pageBounds (pageMix);
@@ -453,7 +456,7 @@ void GuitarsEditor::Root::paint (Graphics& g)
     g.drawText ("Acoustic Guitars", Rectangle<float> (190, 12, 200, 30), Justification::centredLeft);
     g.setColour (Wood::ivorySoft);
     g.setFont (WoodLookAndFeel::uiFont (12.0f));
-    g.drawText (String::fromUTF8 ("Violões, viola caipira, cavaquinho, banjo e cordas dedilhadas"), Rectangle<float> (82, 42, 300, 18), Justification::centredLeft);
+    g.drawText (String::fromUTF8 ("Violões, viola, cavaquinho, banjo e mais"), Rectangle<float> (82, 42, 300, 18), Justification::centredLeft);
     // rodapé
     auto foot = Rectangle<float> (10, 564, (float) getWidth() - 20, 228);
     WoodLookAndFeel::paintPanel (g, foot, 12.0f);
@@ -470,8 +473,8 @@ void GuitarsEditor::Root::paint (Graphics& g)
     g.fillRoundedRectangle (mt.withWidth (mt.getWidth() * jlimit (0.0f, 1.0f, ed.meterValue)), 4.0f);
     g.setColour (Wood::ivorySoft);
     g.setFont (WoodLookAndFeel::uiFont (11.0f));
-    g.drawText (String::fromUTF8 ("© 2026 W. Carolino — SeniorMy — CNPJ 69.610.819/0001-77"), Rectangle<float> (20, 760, 280, 16), Justification::centred);
-    g.drawText ("v" JucePlugin_VersionString, Rectangle<float> (20, 742, 280, 16), Justification::centred);
+    g.drawFittedText (String::fromUTF8 ("© 2026 W. Carolino — SeniorMy\nCNPJ 69.610.819/0001-77"), Rectangle<int> (20, 752, 280, 30), Justification::centred, 2, 0.9f);
+    g.drawText ("v" JucePlugin_VersionString, Rectangle<float> (20, 734, 280, 16), Justification::centred);
 }
 
 //==============================================================================
@@ -581,7 +584,7 @@ void GuitarsEditor::refreshAll()
         const auto& q = st.parts[(size_t) i];
         partButtons[(size_t) i].setButtonText ("Parte " + String (i + 1) + ": " + (q.mode == sms::ModeOff ? String::fromUTF8 ("desligada") : String::fromUTF8 (sms::instrument (q.instrument).namePt)));
         partButtons[(size_t) i].setToggleState (i == p, dontSendNotification);
-        strips[(size_t) i].title = "Parte " + String (i + 1) + String::fromUTF8 (" · ") + String::fromUTF8 (sms::instrument (q.instrument).namePt);
+        strips[(size_t) i].title = "Parte " + String (i + 1) + String::fromUTF8 (" · ") + (q.mode == sms::ModeOff ? String::fromUTF8 ("desligada") : String::fromUTF8 (sms::instrument (q.instrument).namePt));
         strips[(size_t) i].accent = Colour (sms::instrument (q.instrument).colour);
         strips[(size_t) i].pan.slider.setValue (q.pan, dontSendNotification);
         strips[(size_t) i].tone.slider.setValue (q.tone, dontSendNotification);
@@ -665,7 +668,7 @@ void GuitarsEditor::timerCallback()
     if (keyInfo.getText() != info) keyInfo.setText (info, dontSendNotification);
     grid.setPlayStep (proc.engine.isRunning() ? proc.engine.getStep (p) : -1);
     const int playing = (st.harmony.progressionOn && proc.engine.isRunning()) ? proc.engine.progressionIndexAt (proc.engine.getBeat()) : -1;
-    progStrip.setData (st.harmony, selectedSlot, playing);
+    if (playing != lastPlaying) { lastPlaying = playing; progStrip.setData (st.harmony, selectedSlot, playing); }
     const float m = proc.engine.getMeter();
     if (std::abs (m - meterValue) > 0.01f) { meterValue = m; root.repaint (20, 696, 270, 16); }
     String status = proc.getLibraryStatus();

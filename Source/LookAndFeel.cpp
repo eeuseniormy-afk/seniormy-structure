@@ -55,20 +55,29 @@ Font WoodLookAndFeel::titleFont (float h)
 
 void WoodLookAndFeel::paintWood (Graphics& g, Rectangle<float> area)
 {
-    static Image img = ImageCache::getFromMemory (AGBinaryData::woodbg_jpg, AGBinaryData::woodbg_jpgSize);
-    if (img.isValid())
+    // fundo já escalado e com vinheta, guardado por tamanho (desenhar a madeira a cada repaint pesa)
+    static Image src = ImageCache::getFromMemory (AGBinaryData::woodbg_jpg, AGBinaryData::woodbg_jpgSize);
+    static Image cached;
+    const int w = jmax (1, (int) area.getWidth()), h = jmax (1, (int) area.getHeight());
+    if (! cached.isValid() || cached.getWidth() != w || cached.getHeight() != h)
     {
-        // cobre a área mantendo a proporção
-        const float s = jmax (area.getWidth() / (float) img.getWidth(), area.getHeight() / (float) img.getHeight());
-        const float w = (float) img.getWidth() * s, h = (float) img.getHeight() * s;
-        g.drawImage (img, Rectangle<float> (area.getCentreX() - w / 2, area.getCentreY() - h / 2, w, h));
+        cached = Image (Image::RGB, w, h, false);
+        Graphics cg (cached);
+        auto r = Rectangle<float> (0, 0, (float) w, (float) h);
+        if (src.isValid())
+        {
+            const float s = jmax (r.getWidth() / (float) src.getWidth(), r.getHeight() / (float) src.getHeight());
+            const float iw = (float) src.getWidth() * s, ih = (float) src.getHeight() * s;
+            cg.setImageResamplingQuality (Graphics::highResamplingQuality);
+            cg.drawImage (src, Rectangle<float> (r.getCentreX() - iw / 2, r.getCentreY() - ih / 2, iw, ih));
+        }
+        else cg.fillAll (Wood::wood);
+        ColourGradient vg (Colours::black.withAlpha (0.0f), r.getCentreX(), r.getCentreY(),
+                           Colours::black.withAlpha (0.45f), r.getX(), r.getY(), true);
+        cg.setGradientFill (vg);
+        cg.fillRect (r);
     }
-    else g.fillAll (Wood::wood);
-    // vinheta escura para dar leitura aos painéis
-    ColourGradient vg (Colours::black.withAlpha (0.0f), area.getCentreX(), area.getCentreY(),
-                       Colours::black.withAlpha (0.45f), area.getX(), area.getY(), true);
-    g.setGradientFill (vg);
-    g.fillRect (area);
+    g.drawImageAt (cached, (int) area.getX(), (int) area.getY());
 }
 
 void WoodLookAndFeel::paintPanel (Graphics& g, Rectangle<float> r, float radius, bool soft)

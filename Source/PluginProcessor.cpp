@@ -55,7 +55,7 @@ AudioProcessorValueTreeState::ParameterLayout StructureProcessor::createLayout()
     add01 ("reverbSize", "Tamanho da sala", 0.7f);
     add01 ("reverbDecay", "Decaimento", 0.55f);
     addDb ("pianoLevel", "Nível do piano", -60.0f, 6.0f, -6.0f);
-    addBool ("pianoInput", "Piano toca o MIDI", true);
+    addBool ("pianoInput", "Piano toca o MIDI", false);   // v1.0.1: desligado por padrão (só cobertura)
     addBool ("pianoCover", "Piano toca a cobertura", false);
     addBool ("coverOn", "Cobertura ligada", true);
     addDb ("monitor", "Retorno da entrada", -60.0f, 0.0f, -60.0f);
@@ -371,6 +371,7 @@ void StructureProcessor::getStateInformation (MemoryBlock& dest)
     extra->setAttribute ("preset", presetName);
     extra->setAttribute ("edited", presetEdited);
     extra->setAttribute ("uiScale", (double) uiScale);
+    extra->setAttribute ("stateVersion", 2);
     copyXmlToBinary (*xml, dest);
 }
 
@@ -385,6 +386,10 @@ void StructureProcessor::setStateInformation (const void* data, int size)
         xml->removeChildElement (extra, true);
     }
     if (xml->hasTagName (apvts.state.getType())) apvts.replaceState (ValueTree::fromXml (*xml));
+    // v1.0.1: projetos salvos na 1.0.0 tinham o piano interno ligado por padrão
+    // (som de piano por baixo da cobertura). Na migração ele volta desligado.
+    if (! extraCopy || extraCopy->getIntAttribute ("stateVersion", 1) < 2)
+        if (auto* prm = apvts.getParameter ("pianoInput")) prm->setValueNotifyingHost (0.0f);
     if (extraCopy)
     {
         const auto a = JSON::parse (extraCopy->getStringAttribute ("arrangement"));

@@ -60,7 +60,7 @@ struct EngineParams
     float attack01 = 0.4f, release01 = 0.5f;
     float reverbMix = 0.3f, reverbSize = 0.7f, reverbDecay = 0.55f;
     float pianoDb = -6.0f;
-    bool pianoPlaysInput = true;    // o piano toca o MIDI de entrada/teclado
+    bool pianoPlaysInput = false;   // o piano toca o MIDI de entrada/teclado
     bool pianoPlaysCover = false;   // o piano toca as notas da cobertura
     bool coverOn = true;            // cordas ligadas
     float inputMonitorDb = -100.0f; // retorno da entrada de áudio (≤ -60 = mudo)

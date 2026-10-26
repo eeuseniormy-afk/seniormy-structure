@@ -1,7 +1,7 @@
 ﻿; SeniorMy Structure — instalador Windows (Inno Setup 6). © 2026 W. Carolino – SeniorMy – CNPJ 69.610.819/0001-77
 ; A página de licença exige o aceite dos Termos de Uso (pt-BR ou en) antes de instalar.
 #ifndef AppVersion
-  #define AppVersion "1.0.0"
+  #define AppVersion "1.0.1"
 #endif
 #define AppName "SeniorMy Structure"
 #define Art "..\..\build\SeniorMyStructure_artefacts\Release"

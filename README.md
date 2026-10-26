@@ -1,4 +1,4 @@
-# SeniorMy Structure 1.0.0
+# SeniorMy Structure 1.0.1
 
 Coberturas automáticas de cordas, violinos e orquestra **dentro da harmonia da música**: o plugin escuta a
 trilha de piano (ou de outro instrumento) pela entrada de áudio/sidechain e/ou recebe MIDI, detecta acordes e

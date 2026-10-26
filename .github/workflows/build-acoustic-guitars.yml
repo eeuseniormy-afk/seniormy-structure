@@ -2,6 +2,8 @@ name: build-seniormy-acoustic-guitars
 # Execução manual (Actions → build-seniormy-acoustic-guitars → Run workflow). Gera os instaladores
 # macOS (.pkg universal x86_64+arm64, macOS 10.13+) e Windows x64 (.exe + .zip) e publica uma Release.
 on:
+  push:
+    branches: [acoustic-guitars]
   workflow_dispatch:
     inputs:
       publish_release:
@@ -219,7 +221,7 @@ jobs:
 
   release:
     needs: [macos, windows]
-    if: ${{ inputs.publish_release }}
+    if: ${{ github.event_name == 'push' || inputs.publish_release }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

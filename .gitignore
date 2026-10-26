@@ -1,0 +1,15 @@
+build/
+build-*/
+samples-cache/
+art/
+dist/
+pkgroot/
+pkgs/
+shots/
+logs/
+zipstage/
+venv/
+scripts/mac/res/
+scripts/win/license-*.txt
+__pycache__/
+.DS_Store

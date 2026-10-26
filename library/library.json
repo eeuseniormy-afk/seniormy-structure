@@ -1,0 +1,1380 @@
+{
+ "version": 1,
+ "product": "SeniorMy Acoustic Guitars",
+ "instruments": {
+  "steel": {
+   "zones": [
+    {
+     "file": "steel/MartinGM2_040__E2_1.flac",
+     "root": 40,
+     "lo": 35,
+     "hi": 41,
+     "tune": 6.24,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_043__G2_1.flac",
+     "root": 43,
+     "lo": 42,
+     "hi": 44,
+     "tune": 4.76,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_046_Bb2_1.flac",
+     "root": 46,
+     "lo": 45,
+     "hi": 47,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_049_Db3_1.flac",
+     "root": 49,
+     "lo": 48,
+     "hi": 50,
+     "tune": 4.88,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_052__E3_1.flac",
+     "root": 52,
+     "lo": 51,
+     "hi": 53,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_055__G3_1.flac",
+     "root": 55,
+     "lo": 54,
+     "hi": 56,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_058_Bb3_1.flac",
+     "root": 58,
+     "lo": 57,
+     "hi": 59,
+     "tune": 8.77,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_061_Db4_1.flac",
+     "root": 61,
+     "lo": 60,
+     "hi": 62,
+     "tune": 6.32,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_064__E4_1.flac",
+     "root": 64,
+     "lo": 63,
+     "hi": 66,
+     "tune": 7.09,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_068_Ab4_1.flac",
+     "root": 68,
+     "lo": 67,
+     "hi": 69,
+     "tune": 9.47,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_071__B4_1.flac",
+     "root": 71,
+     "lo": 70,
+     "hi": 72,
+     "tune": 10.77,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_074__D5_1.flac",
+     "root": 74,
+     "lo": 73,
+     "hi": 75,
+     "tune": 12.7,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_077__F5_1.flac",
+     "root": 77,
+     "lo": 76,
+     "hi": 78,
+     "tune": 10.77,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_080_Ab5_1.flac",
+     "root": 80,
+     "lo": 79,
+     "hi": 81,
+     "tune": 12.43,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "steel/MartinGM2_083__B5_1.flac",
+     "root": 83,
+     "lo": 82,
+     "hi": 88,
+     "tune": 12.81,
+     "rr": 0,
+     "gain": 1.0
+    }
+   ],
+   "numRR": 1,
+   "gainDb": 0.0
+  },
+  "nylon": {
+   "zones": [
+    {
+     "file": "nylon/G1.flac",
+     "root": 31,
+     "lo": 29,
+     "hi": 31,
+     "tune": -12.31,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/G#1.flac",
+     "root": 32,
+     "lo": 32,
+     "hi": 32,
+     "tune": -5.45,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/A1.flac",
+     "root": 33,
+     "lo": 33,
+     "hi": 33,
+     "tune": -5.86,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/A#1.flac",
+     "root": 34,
+     "lo": 34,
+     "hi": 34,
+     "tune": -5.95,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/B1.flac",
+     "root": 35,
+     "lo": 35,
+     "hi": 35,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/C2.flac",
+     "root": 36,
+     "lo": 36,
+     "hi": 36,
+     "tune": -6.85,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/C#2.flac",
+     "root": 37,
+     "lo": 37,
+     "hi": 37,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/D2.flac",
+     "root": 38,
+     "lo": 38,
+     "hi": 38,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/D#2.flac",
+     "root": 39,
+     "lo": 39,
+     "hi": 39,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/E2.flac",
+     "root": 40,
+     "lo": 40,
+     "hi": 40,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/F2.flac",
+     "root": 41,
+     "lo": 41,
+     "hi": 41,
+     "tune": -9.82,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/G2.flac",
+     "root": 43,
+     "lo": 42,
+     "hi": 43,
+     "tune": -11.59,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/A2.flac",
+     "root": 45,
+     "lo": 44,
+     "hi": 45,
+     "tune": -6.54,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/B2.flac",
+     "root": 47,
+     "lo": 46,
+     "hi": 47,
+     "tune": -9.57,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/C3.flac",
+     "root": 48,
+     "lo": 48,
+     "hi": 48,
+     "tune": -6.06,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/D3.flac",
+     "root": 50,
+     "lo": 49,
+     "hi": 50,
+     "tune": -8.52,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/E3.flac",
+     "root": 52,
+     "lo": 51,
+     "hi": 52,
+     "tune": -7.53,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/F3.flac",
+     "root": 53,
+     "lo": 53,
+     "hi": 53,
+     "tune": -6.67,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/F#3.flac",
+     "root": 54,
+     "lo": 54,
+     "hi": 54,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/G3.flac",
+     "root": 55,
+     "lo": 55,
+     "hi": 55,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/G#3.flac",
+     "root": 56,
+     "lo": 56,
+     "hi": 56,
+     "tune": -6.46,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/A3.flac",
+     "root": 57,
+     "lo": 57,
+     "hi": 57,
+     "tune": -11.88,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/A#3.flac",
+     "root": 58,
+     "lo": 58,
+     "hi": 58,
+     "tune": -11.83,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/B3.flac",
+     "root": 59,
+     "lo": 59,
+     "hi": 59,
+     "tune": -15.3,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/C4.flac",
+     "root": 60,
+     "lo": 60,
+     "hi": 60,
+     "tune": -8.08,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/C#4.flac",
+     "root": 61,
+     "lo": 61,
+     "hi": 61,
+     "tune": -17.78,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/D4.flac",
+     "root": 62,
+     "lo": 62,
+     "hi": 62,
+     "tune": -8.43,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/D#4.flac",
+     "root": 63,
+     "lo": 63,
+     "hi": 63,
+     "tune": -9.46,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/E4.flac",
+     "root": 64,
+     "lo": 64,
+     "hi": 64,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/F4.flac",
+     "root": 65,
+     "lo": 65,
+     "hi": 65,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/F#4.flac",
+     "root": 66,
+     "lo": 66,
+     "hi": 66,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/G4.flac",
+     "root": 67,
+     "lo": 67,
+     "hi": 67,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/A4.flac",
+     "root": 69,
+     "lo": 68,
+     "hi": 69,
+     "tune": -5.13,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/A#4.flac",
+     "root": 70,
+     "lo": 70,
+     "hi": 70,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/B4.flac",
+     "root": 71,
+     "lo": 71,
+     "hi": 71,
+     "tune": -14.79,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/C5.flac",
+     "root": 72,
+     "lo": 72,
+     "hi": 72,
+     "tune": -10.8,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/C#5.flac",
+     "root": 73,
+     "lo": 73,
+     "hi": 73,
+     "tune": -9.5,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/D5.flac",
+     "root": 74,
+     "lo": 74,
+     "hi": 74,
+     "tune": -10.82,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/D#5.flac",
+     "root": 75,
+     "lo": 75,
+     "hi": 75,
+     "tune": -4.09,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/E5.flac",
+     "root": 76,
+     "lo": 76,
+     "hi": 76,
+     "tune": -6.22,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/F5.flac",
+     "root": 77,
+     "lo": 77,
+     "hi": 77,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/F#5.flac",
+     "root": 78,
+     "lo": 78,
+     "hi": 78,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/G5.flac",
+     "root": 79,
+     "lo": 79,
+     "hi": 79,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/G#5.flac",
+     "root": 80,
+     "lo": 80,
+     "hi": 80,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/A5.flac",
+     "root": 81,
+     "lo": 81,
+     "hi": 81,
+     "tune": -9.14,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/A#5.flac",
+     "root": 82,
+     "lo": 82,
+     "hi": 82,
+     "tune": -4.64,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/B5.flac",
+     "root": 83,
+     "lo": 83,
+     "hi": 83,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "nylon/C6.flac",
+     "root": 84,
+     "lo": 84,
+     "hi": 88,
+     "tune": -6.79,
+     "rr": 0,
+     "gain": 1.0
+    }
+   ],
+   "numRR": 1,
+   "gainDb": 0.0
+  },
+  "ukulele": {
+   "zones": [
+    {
+     "file": "ukulele/C4.flac",
+     "root": 60,
+     "lo": 58,
+     "hi": 60,
+     "tune": -14.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/D4.flac",
+     "root": 62,
+     "lo": 61,
+     "hi": 62,
+     "tune": -23.32,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/E4.flac",
+     "root": 64,
+     "lo": 63,
+     "hi": 64,
+     "tune": -2.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/F#4.flac",
+     "root": 66,
+     "lo": 65,
+     "hi": 66,
+     "tune": -30.12,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/G4.flac",
+     "root": 67,
+     "lo": 67,
+     "hi": 67,
+     "tune": -1.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/A4.flac",
+     "root": 69,
+     "lo": 68,
+     "hi": 69,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/B4.flac",
+     "root": 71,
+     "lo": 70,
+     "hi": 71,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/C#5.flac",
+     "root": 73,
+     "lo": 72,
+     "hi": 73,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/D#5.flac",
+     "root": 75,
+     "lo": 74,
+     "hi": 75,
+     "tune": 9.2,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/F5.flac",
+     "root": 77,
+     "lo": 76,
+     "hi": 77,
+     "tune": 12.35,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/G5.flac",
+     "root": 79,
+     "lo": 78,
+     "hi": 79,
+     "tune": 18.55,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/A5.flac",
+     "root": 81,
+     "lo": 80,
+     "hi": 82,
+     "tune": 24.76,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "ukulele/C6.flac",
+     "root": 84,
+     "lo": 83,
+     "hi": 86,
+     "tune": 11.58,
+     "rr": 0,
+     "gain": 1.0
+    }
+   ],
+   "numRR": 1,
+   "gainDb": 0.0
+  },
+  "banjo": {
+   "zones": [
+    {
+     "file": "banjo/Banjo_Common_-_D#3.flac",
+     "root": 39,
+     "lo": 38,
+     "hi": 39,
+     "tune": -33.31,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_E3.flac",
+     "root": 40,
+     "lo": 40,
+     "hi": 40,
+     "tune": -41.18,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_F3.flac",
+     "root": 41,
+     "lo": 41,
+     "hi": 41,
+     "tune": -45.98,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_F#3.flac",
+     "root": 42,
+     "lo": 42,
+     "hi": 42,
+     "tune": -50.56,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_F#3_2.flac",
+     "root": 42,
+     "lo": 42,
+     "hi": 42,
+     "tune": -50.82,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G3.flac",
+     "root": 43,
+     "lo": 43,
+     "hi": 43,
+     "tune": -42.9,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G#3.flac",
+     "root": 44,
+     "lo": 44,
+     "hi": 44,
+     "tune": -40.16,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G#3_2.flac",
+     "root": 44,
+     "lo": 44,
+     "hi": 44,
+     "tune": -43.84,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A3.flac",
+     "root": 45,
+     "lo": 45,
+     "hi": 45,
+     "tune": -60.71,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A3_2.flac",
+     "root": 45,
+     "lo": 45,
+     "hi": 45,
+     "tune": -32.01,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A#3.flac",
+     "root": 46,
+     "lo": 46,
+     "hi": 46,
+     "tune": -43.06,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_B3.flac",
+     "root": 47,
+     "lo": 47,
+     "hi": 47,
+     "tune": -46.91,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_C#4.flac",
+     "root": 49,
+     "lo": 48,
+     "hi": 49,
+     "tune": -43.46,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_C#4_2.flac",
+     "root": 49,
+     "lo": 48,
+     "hi": 49,
+     "tune": -43.46,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_D4.flac",
+     "root": 50,
+     "lo": 50,
+     "hi": 50,
+     "tune": -52.9,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_D#4.flac",
+     "root": 51,
+     "lo": 51,
+     "hi": 51,
+     "tune": -48.4,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_E4.flac",
+     "root": 52,
+     "lo": 52,
+     "hi": 52,
+     "tune": -43.38,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_F4.flac",
+     "root": 53,
+     "lo": 53,
+     "hi": 53,
+     "tune": -43.03,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_F#4_2.flac",
+     "root": 54,
+     "lo": 54,
+     "hi": 54,
+     "tune": -44.83,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_F#4_3.flac",
+     "root": 54,
+     "lo": 54,
+     "hi": 54,
+     "tune": -38.86,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_F#4_5.flac",
+     "root": 54,
+     "lo": 54,
+     "hi": 54,
+     "tune": -37.26,
+     "rr": 2,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_F#4_6.flac",
+     "root": 54,
+     "lo": 54,
+     "hi": 54,
+     "tune": -50.89,
+     "rr": 3,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G4.flac",
+     "root": 55,
+     "lo": 55,
+     "hi": 55,
+     "tune": -58.03,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G4_2.flac",
+     "root": 55,
+     "lo": 55,
+     "hi": 55,
+     "tune": -21.02,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G#4.flac",
+     "root": 56,
+     "lo": 56,
+     "hi": 56,
+     "tune": -54.69,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G#4_2.flac",
+     "root": 56,
+     "lo": 56,
+     "hi": 56,
+     "tune": -26.62,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G#4_3.flac",
+     "root": 56,
+     "lo": 56,
+     "hi": 56,
+     "tune": -54.44,
+     "rr": 2,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G#4_4.flac",
+     "root": 56,
+     "lo": 56,
+     "hi": 56,
+     "tune": -50.76,
+     "rr": 3,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A4.flac",
+     "root": 57,
+     "lo": 57,
+     "hi": 57,
+     "tune": -11.95,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A4_2.flac",
+     "root": 57,
+     "lo": 57,
+     "hi": 57,
+     "tune": -46.32,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A4_3.flac",
+     "root": 57,
+     "lo": 57,
+     "hi": 57,
+     "tune": -44.1,
+     "rr": 2,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A#4.flac",
+     "root": 58,
+     "lo": 58,
+     "hi": 58,
+     "tune": -27.69,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A#4_2.flac",
+     "root": 58,
+     "lo": 58,
+     "hi": 58,
+     "tune": -38.68,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A#4_3.flac",
+     "root": 58,
+     "lo": 58,
+     "hi": 58,
+     "tune": -17.06,
+     "rr": 2,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A#4_4.flac",
+     "root": 58,
+     "lo": 58,
+     "hi": 58,
+     "tune": -43.62,
+     "rr": 3,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_B4.flac",
+     "root": 59,
+     "lo": 59,
+     "hi": 59,
+     "tune": -38.85,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_B4_2.flac",
+     "root": 59,
+     "lo": 59,
+     "hi": 59,
+     "tune": 21.29,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_B4_3.flac",
+     "root": 59,
+     "lo": 59,
+     "hi": 59,
+     "tune": -45.4,
+     "rr": 2,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_B4_4.flac",
+     "root": 59,
+     "lo": 59,
+     "hi": 59,
+     "tune": -38.22,
+     "rr": 3,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_C5.flac",
+     "root": 60,
+     "lo": 60,
+     "hi": 60,
+     "tune": -38.94,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_C#5.flac",
+     "root": 61,
+     "lo": 61,
+     "hi": 62,
+     "tune": -41.14,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_D#5_2.flac",
+     "root": 63,
+     "lo": 63,
+     "hi": 65,
+     "tune": -19.23,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G5.flac",
+     "root": 67,
+     "lo": 66,
+     "hi": 67,
+     "tune": -13.95,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G#5.flac",
+     "root": 68,
+     "lo": 68,
+     "hi": 69,
+     "tune": -25.33,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_G#5_2.flac",
+     "root": 68,
+     "lo": 68,
+     "hi": 69,
+     "tune": -46.94,
+     "rr": 1,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_A#5.flac",
+     "root": 70,
+     "lo": 70,
+     "hi": 70,
+     "tune": -45.86,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "banjo/Banjo_Common_-_B5.flac",
+     "root": 71,
+     "lo": 71,
+     "hi": 72,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    }
+   ],
+   "numRR": 4,
+   "gainDb": -1.0
+  },
+  "sitar": {
+   "zones": [
+    {
+     "file": "sitar/Str01.flac",
+     "root": 36,
+     "lo": 12,
+     "hi": 37,
+     "tune": -17.9,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str02.flac",
+     "root": 38,
+     "lo": 38,
+     "hi": 39,
+     "tune": -33.68,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str03.flac",
+     "root": 40,
+     "lo": 40,
+     "hi": 40,
+     "tune": -32.01,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str04.flac",
+     "root": 41,
+     "lo": 41,
+     "hi": 42,
+     "tune": -31.08,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str05.flac",
+     "root": 43,
+     "lo": 43,
+     "hi": 44,
+     "tune": -6.86,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str06.flac",
+     "root": 45,
+     "lo": 45,
+     "hi": 46,
+     "tune": -12.12,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str07.flac",
+     "root": 47,
+     "lo": 47,
+     "hi": 47,
+     "tune": -17.62,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str08.flac",
+     "root": 48,
+     "lo": 48,
+     "hi": 49,
+     "tune": -15.95,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str09.flac",
+     "root": 50,
+     "lo": 50,
+     "hi": 51,
+     "tune": -14.08,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str10.flac",
+     "root": 52,
+     "lo": 52,
+     "hi": 52,
+     "tune": -17.54,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str11.flac",
+     "root": 53,
+     "lo": 53,
+     "hi": 54,
+     "tune": -12.91,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str12.flac",
+     "root": 55,
+     "lo": 55,
+     "hi": 56,
+     "tune": -19.61,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str13.flac",
+     "root": 57,
+     "lo": 57,
+     "hi": 58,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str14.flac",
+     "root": 59,
+     "lo": 59,
+     "hi": 59,
+     "tune": -10.49,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str15.flac",
+     "root": 60,
+     "lo": 60,
+     "hi": 61,
+     "tune": -10.03,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str16.flac",
+     "root": 62,
+     "lo": 62,
+     "hi": 63,
+     "tune": -8.28,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str17.flac",
+     "root": 64,
+     "lo": 64,
+     "hi": 64,
+     "tune": 0.0,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str18.flac",
+     "root": 65,
+     "lo": 65,
+     "hi": 66,
+     "tune": -4.08,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str19.flac",
+     "root": 67,
+     "lo": 67,
+     "hi": 68,
+     "tune": -11.32,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str20.flac",
+     "root": 69,
+     "lo": 69,
+     "hi": 70,
+     "tune": 10.08,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str21.flac",
+     "root": 71,
+     "lo": 71,
+     "hi": 71,
+     "tune": -10.97,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str22.flac",
+     "root": 72,
+     "lo": 72,
+     "hi": 73,
+     "tune": -13.05,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str23.flac",
+     "root": 74,
+     "lo": 74,
+     "hi": 75,
+     "tune": -12.97,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str24.flac",
+     "root": 76,
+     "lo": 76,
+     "hi": 76,
+     "tune": -13.27,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str25.flac",
+     "root": 77,
+     "lo": 77,
+     "hi": 78,
+     "tune": -11.09,
+     "rr": 0,
+     "gain": 1.0
+    },
+    {
+     "file": "sitar/Str26.flac",
+     "root": 79,
+     "lo": 79,
+     "hi": 96,
+     "tune": -10.89,
+     "rr": 0,
+     "gain": 1.0
+    }
+   ],
+   "numRR": 1,
+   "gainDb": -2.0
+  }
+ },
+ "noises": {
+  "bodyTap": "noises/body-tap.flac"
+ }
+}

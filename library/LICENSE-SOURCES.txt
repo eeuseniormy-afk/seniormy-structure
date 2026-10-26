@@ -1,0 +1,68 @@
+SeniorMy Acoustic Guitars — créditos, licenças e avisos de terceiros / credits, licenses and third-party notices
+© 2026 W. Carolino — SeniorMy — CNPJ 69.610.819/0001-77. Todos os direitos reservados / All rights reserved.
+
+1) AMOSTRAS GRAVADAS / RECORDED SAMPLES
+   Todas sob / All under: Creative Commons CC0 1.0 Universal (dedicação ao domínio público / public domain
+   dedication) — https://creativecommons.org/publicdomain/zero/1.0/
+   As amostras foram cortadas, afinadas, normalizadas, processadas e mapeadas pela SeniorMy. Trimmed, tuned,
+   normalized, processed and mapped by SeniorMy.
+
+   a) Violão de aço / Steel-string guitar — Martin HD-28, gravado e mapeado por / recorded and mapped by
+      Jeff Learman, para o / for the Discord SFZ GM Bank.
+      Fonte / Source: https://github.com/sfzinstruments/Discord-SFZ-GM-Bank
+      ("Discord GM/Melodic/026-Acoustic Guitar (steel)", commit 7a9c478fe331f94f246d33332f0adedb25bbbe27)
+      Licença declarada no arquivo SFZ / License stated in the SFZ file: "License: Creative Commons CC0".
+      Usado também (transformado) nos instrumentos derivados "Violão 12 Cordas" e como excitação dos
+      instrumentos modelados. Also used (transformed) for the derived 12-string guitar and as excitation
+      for the modeled instruments.
+
+   b) Violão de nylon / Nylon-string guitar — "Spanish Classical Guitar", versão 2019-06-18, gravado por /
+      recorded by roberto@zenvoid.org para o projeto / for the FreePats project.
+      Página / Page: https://freepats.zenvoid.org/Guitar/acoustic-guitar.html
+      Licença / License: CC0 1.0 (declarada na página e no arquivo cc0.txt / stated on the page and cc0.txt).
+      Usado também (transformado) no instrumento derivado "Violão Flamenco". Also used (transformed) for the
+      derived flamenco guitar.
+
+   c) Ukulele tenor / Tenor ukulele — Flight Fireball, versão 2026-08-11, gravado por / recorded by
+      Mateusz Dąbrowski, oferecido ao projeto FreePats / offered to the FreePats project.
+      Página / Page: https://freepats.zenvoid.org/GuitarFamily/ukulele.html
+      Fonte / Source: https://github.com/freepats/ukulele1/releases/tag/2026-08-11
+      Licença / License: CC0 1.0 (LICENSE.txt).
+
+   d) Banjo — banjo de 6 cordas SX (guitar banjo), gravado, editado e mapeado por / recorded, edited and
+      mapped by itsclipping.
+      Fonte / Source: https://github.com/sfzinstruments/ganjo (commit ccff5cd5cd3b513873a48994c07724d9d3c39e1c)
+      Licença / License: CC0 1.0 (LICENSE.md).
+
+   e) Cítara indiana / Sitar — amostras e SFZ contribuídos por / samples and SFZ contributed by
+      Dr. Narayan Bhagawan Raikar, Discord SFZ GM Bank.
+      Fonte / Source: https://github.com/sfzinstruments/Discord-SFZ-GM-Bank
+      ("Discord GM/Melodic/105-Sitar", commit 7a9c478fe331f94f246d33332f0adedb25bbbe27)
+      Licença / License: CC0 (declarada no readme.md e no Sitar.sfz / stated in readme.md and Sitar.sfz).
+
+   Agradecemos a todos os autores, ainda que a licença CC0 não exija crédito. We thank all authors, even
+   though CC0 does not require credit.
+
+2) INSTRUMENTOS MODELADOS / MODELED INSTRUMENTS
+   Viola Caipira, Cavaquinho e Bandolim são sintetizados por modelagem física (guia de onda digital com
+   ressonâncias de corpo) escrita pela SeniorMy; não são gravações desses instrumentos. Violão Flamenco e
+   Violão 12 Cordas são derivados das gravações (a) e (b). Ruídos de traste/soltura são sintetizados.
+   Viola caipira, cavaquinho and mandolin are synthesized with SeniorMy's own physical modeling; they are not
+   recordings of those instruments. Fret/release noises are synthesized.
+
+3) JUCE
+   Framework JUCE (https://juce.com) — © Raw Material Software Limited. Usado conforme a licença JUCE 8.
+   Used under the JUCE 8 license terms.
+
+4) VST3 SDK
+   VST is a registered trademark of Steinberg Media Technologies GmbH. O SDK VST3 é usado conforme sua
+   licença / The VST3 SDK is used under its license terms (see the SDK's LICENSE.txt).
+
+5) Audio Unit é marca da Apple Inc. / Audio Unit is a trademark of Apple Inc.
+   Martin é marca de C. F. Martin & Co.; citada apenas para descrever a gravação, sem afiliação.
+   Martin is a trademark of C. F. Martin & Co.; mentioned only to describe the recording, no affiliation.
+
+O restante do Software — motor de batidas e dedilhados, digitações de acordes, harmonia, modelagem física,
+motor de áudio, reverb, interface, ilustrações, presets e padrões — é original da SeniorMy.
+All other parts of the Software — strum and fingerpicking engine, chord voicings, harmony, physical modeling,
+audio engine, reverb, interface, illustrations, presets and patterns — are original SeniorMy work.

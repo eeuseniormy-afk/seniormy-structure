@@ -1,0 +1,5 @@
+#!/bin/bash
+# Atualiza o cache de Audio Units para o Logic encontrar o plugin na hora.
+killall -9 AudioComponentRegistrar >/dev/null 2>&1 || true
+rm -f "$HOME/Library/Caches/AudioUnitCache/com.apple.audiounits.cache" >/dev/null 2>&1 || true
+exit 0

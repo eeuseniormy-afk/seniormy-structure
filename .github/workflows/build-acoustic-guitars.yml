@@ -4,6 +4,11 @@ name: build-seniormy-acoustic-guitars
 on:
   push:
     branches: [acoustic-guitars]
+    paths-ignore:
+      - 'tools/render_demo.cpp'
+      - '.github/workflows/render-demo-acoustic-guitars.yml'
+      - 'CMakeLists.txt'
+      - 'STATUS.md'
   workflow_dispatch:
     inputs:
       publish_release:

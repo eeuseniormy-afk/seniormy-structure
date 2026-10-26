@@ -131,3 +131,21 @@ target_link_libraries(library_test PRIVATE juce::juce_core juce::juce_events juc
 if(MSVC)
     target_compile_options(library_test PRIVATE /utf-8 /bigobj)
 endif()
+
+# --- Demonstrações de áudio ----------------------------------------------------
+# Render offline (WAV 48 kHz/24 bits) dos presets com amostras gravadas, pelo mesmo motor do plugin.
+juce_add_console_app(render_demo PRODUCT_NAME "render_demo")
+target_sources(render_demo PRIVATE tools/render_demo.cpp Source/SampleLibrary.cpp)
+target_include_directories(render_demo PRIVATE Source)
+target_compile_definitions(render_demo PRIVATE
+    JUCE_WEB_BROWSER=0
+    JUCE_USE_CURL=0
+    JUCE_USE_FLAC=1
+    JUCE_USE_MP3AUDIOFORMAT=1
+    JUCE_MODAL_LOOPS_PERMITTED=1
+    JUCE_STANDALONE_APPLICATION=1)
+target_link_libraries(render_demo PRIVATE juce::juce_core juce::juce_events juce::juce_audio_basics juce::juce_audio_formats
+    PUBLIC juce::juce_recommended_config_flags juce::juce_recommended_warning_flags)
+if(MSVC)
+    target_compile_options(render_demo PRIVATE /utf-8 /bigobj)
+endif()
